@@ -21,13 +21,13 @@ The very basics for a non-trivial Vue web application.
 
 ### Webpack + Babel
 
-The [Webpack]([https://webpack.js.org/](https://webpack.js.org/)) module bundler uses the [Babel]([https://babeljs.io/](https://babeljs.io/))  compiler and the [Vue]([https://vuejs.org/](https://vuejs.org/)) framework loaders (and Babel uses the [TypeScript]([https://www.typescriptlang.org/](https://www.typescriptlang.org/)) preset) to allow us to use the latest and greatest JS/TS that will run in any browser of our choosing ([.browserlistrc]([https://github.com/browserslist/browserslist](https://github.com/browserslist/browserslist)))!
+The [Webpack](https://webpack.js.org/) module bundler uses the [Babel](https://babeljs.io/)  compiler and the [Vue](https://vuejs.org/) framework loaders (and Babel uses the [TypeScript](https://www.typescriptlang.org/) preset) to allow us to use the latest and greatest JS/TS that will run in any browser of our choosing ([.browserlistrc](https://github.com/browserslist/browserslist))!
 
 ### There is something about testing
 
-The project is ready to look for unit tests on `__unit-tests__` folders and run them using [Jest]([https://jestjs.io/](https://jestjs.io/))!
+The project is ready to look for unit tests on `__unit-tests__` folders and run them using [Jest](https://jestjs.io/)!
 
-It is also ready to run end-to-end tests using [Cypress]([https://www.cypress.io/](https://www.cypress.io/)) from the `cypress/integration` folder (the default).
+It is also ready to run end-to-end tests using [Cypress](https://www.cypress.io/) from the `cypress/integration` folder (the default).
 
 ## `npm run ...`
 
@@ -59,7 +59,7 @@ Runs e2e tests using Cypress in terminal mode (`cypress run`).
 
 #### `npm run patch`
 
-Updates the patch ([SemVer]([https://semver.org/](https://semver.org/))) number, commits, tags and pushes it to the repository.
+Updates the patch ([SemVer](https://semver.org/)) number, commits, tags and pushes it to the repository.
 
 ## CI/CD using CircleCI
 
