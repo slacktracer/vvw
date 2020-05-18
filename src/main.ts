@@ -1,8 +1,8 @@
 import Vue from "vue";
 
-import App from "./app/app.vue";
-import router from "./app/router";
-import store from "./app/store";
+import App from "./app/ui/app.vue";
+import router from "./app/routers/main";
+import store from "./app/stores/main";
 
 new Vue({
   router,

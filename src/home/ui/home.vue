@@ -8,15 +8,15 @@
         --- {{ crazy }}
       </p>
     </div>
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Tentative seed project" />
   </div>
 </template>
 
 <script lang="ts">
-import { version } from "../../package.json";
-import x from "../something";
-import HelloWorld from "./components/hello-world.vue";
+import { version } from "../../../package.json";
+import x from "../../something";
+import HelloWorld from "../components/hello-world.vue";
 
 export default {
   name: "Home",
