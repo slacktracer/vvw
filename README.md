@@ -14,7 +14,9 @@ Create a `.env` file at root level (`.`). It will be ignored by git.
 
 Add development environment variables as needed.
 
+```
 BASE_URL=https://api.example.com
+```
 
 Then `npm start`!
 
