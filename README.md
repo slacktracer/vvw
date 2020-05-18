@@ -1,4 +1,4 @@
-#  vvw
+# vvw
 
 Vue via Webpack. A project seed.
 
@@ -10,6 +10,14 @@ Get this repository's latest content inside a new git repository using [degit](h
 npx degit https://github.com/slacktracer/vvw.git --force
 ```
 
+Create a `.env` file at root level (`.`). It will be ignored by git.
+
+Add development environment variables as needed.
+
+BASE_URL=https://api.example.com
+
+Then `npm start`!
+
 ## What's inside?
 
 ### Framework
@@ -18,7 +26,7 @@ npx degit https://github.com/slacktracer/vvw.git --force
 
 ### Compiling and bundling/building
 
-The [Webpack](https://webpack.js.org/) module bundler uses the [Babel](https://babeljs.io/)  compiler and the [Vue](https://vuejs.org/) framework loaders (and Babel uses the [TypeScript](https://www.typescriptlang.org/) preset) to allow us to use the latest and greatest JS/TS that will run in any browser of our choosing ([.browserlistrc](https://github.com/browserslist/browserslist))!
+The [Webpack](https://webpack.js.org/) module bundler uses the [Babel](https://babeljs.io/) compiler and the [Vue](https://vuejs.org/) framework loaders (and Babel uses the [TypeScript](https://www.typescriptlang.org/) preset) to allow us to use the latest and greatest JS/TS that will run in any browser of our choosing ([.browserlistrc](https://github.com/browserslist/browserslist))!
 
 Before every commit and `npm run patch` the TypeScript compiler type checks the code.
 
@@ -31,7 +39,6 @@ And by the following configuration files at source (the `./src` folder) level:
 - .babelrc
 - tsconfig.json
 
-
 ### Testing
 
 The project is set up to look for unit tests inside `__unit-tests__` folders and run them using [Jest](https://jestjs.io/).
@@ -40,8 +47,8 @@ It is also set up to run end-to-end tests from the `cypress/integration` folder 
 
 These tools are mostly configured by the following configuration files at root (`.`) level:
 
- - cypress.json
- - jest.config.json
+- cypress.json
+- jest.config.json
 
 ### Code quality
 
@@ -58,8 +65,8 @@ These tools are mostly configured by the following configuration files at root (
 
 And by the following configuration files at source (the `./src` folder) level:
 
- - .eslintignore
- - .eslintrc.json
+- .eslintignore
+- .eslintrc.json
 
 Finally, the [`.editorconfig`](https://editorconfig.org/) file is there, at root (`.`) level, to make different code editors behave in the same consistent way in regards to details like indentation size etc.
 
@@ -105,7 +112,7 @@ Runs Prettier to check the code formatting.
 
 ##### `npm run lint`
 
-Runs ESLint to... well, [lint](https://en.wikipedia.org/wiki/Lint_(software)) the code.
+Runs ESLint to... well, [lint](<https://en.wikipedia.org/wiki/Lint_(software)>) the code.
 
 ## CI/CD using CircleCI
 
@@ -114,8 +121,16 @@ Runs ESLint to... well, [lint](https://en.wikipedia.org/wiki/Lint_(software)) th
 These variables should be set at project level:
 
 **`AWS_ACCESS_KEY_ID`**
+
+The AWS access key ID. Who would have guessed?
+
 **`AWS_REGION`**
+
+The AWS region. But, honestly, it is always the same. You know it.
+
 **`AWS_SECRET_ACCESS_KEY`**
+
+Pretty much the same thing as the first one, but this one is _seeecret_...
 
 **`BUILDS_BUCKET`:**
 
@@ -137,17 +152,17 @@ It will be used to create an invalidation on CloudFront after the latest staging
 
 Setting variables for each environment in three easy steps!
 
-1) Add the project name to the `package.json` file:
+1. Add the project name to the `package.json` file:
 
-	{
-		"name": "some_project_name",
-		"version": "1.0.0",
-		...
-	}
+   {
+   "name": "some_project_name",
+   "version": "1.0.0",
+   ...
+   }
 
-2) `npm run config`. It will create the `.circleci/config.yml` file.
+2. `npm run config`. It will create the `.circleci/config.yml` file.
 
-3) Create a context for each environment with variables like `BASE_URL`.
+3. Create a context for each environment with variables like `BASE_URL`.
 
 #### Naming contexts
 
@@ -158,15 +173,3 @@ We should end up with something like this:
 - `SOME_PROJECT_NAME_ENV_STAGING`
 - `SOME_PROJECT_NAME_ENV_DEMO`
 - `SOME_PROJECT_NAME_ENV_PRODUCTION`
-
-## Development
-
-Create a `.env` file at root level (`.`).
-
-(It will be ignored by git.)
-
-Add the environment variables for development.
-
-	BASE_URL=https://api.example.com
-
-Then `npm run start`!
