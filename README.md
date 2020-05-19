@@ -15,8 +15,12 @@ Create a `.env` file at root level (`.`). It will be ignored by git.
 Add development environment variables as needed.
 
 ```
+# stop and run npm start again after adding new environment variables
+
 BASE_URL=https://api.example.com
 ```
+
+Then `npm i`...
 
 Then `npm start`!
 
@@ -156,11 +160,11 @@ Setting variables for each environment in three easy steps!
 
 1. Add the project name to the `package.json` file:
 
-   {
-   "name": "some_project_name",
-   "version": "1.0.0",
-   ...
-   }
+{
+"name": "some_project_name",
+"version": "1.0.0",
+...
+}
 
 2. `npm run config`. It will create the `.circleci/config.yml` file.
 
