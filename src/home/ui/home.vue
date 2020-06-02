@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <img alt="Vue logo" src="src/home/assets/logo.png" />
+    <HelloWorld msg="vvw" />
     <div>
       <p>
         {{ greeting }} ({{ val }}) World! {{ version }}::{{ envvar }}::{{
@@ -8,14 +10,12 @@
         --- {{ crazy }}
       </p>
     </div>
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Tentative seed project" />
   </div>
 </template>
 
 <script lang="ts">
+import x from "src/home/services/something";
 import { version } from "../../../package.json";
-import x from "../../something";
 import HelloWorld from "../components/hello-world.vue";
 
 export default {
