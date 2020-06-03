@@ -12,7 +12,7 @@
       alt="Vue logo"
       class="mb-2"
       height="400"
-      src="src/home/assets/chuttersnap-UmftXwTd8Q4-unsplash.jpg"
+      src="./assets/chuttersnap-UmftXwTd8Q4-unsplash.jpg"
     />
     <p>
       Photo by

@@ -1,7 +1,7 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="dark">
     <b-navbar-brand href="#">
-      <img src="src/favicon-32x32.png" alt="poo" />
+      <img src="../favicon-32x32.png" alt="poo" />
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
