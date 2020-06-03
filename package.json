@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "audit": "npm audit --audit-level=moderate",
     "build": "webpack $npm_package_config_production",
@@ -36,6 +36,8 @@
     "@typescript-eslint/parser": "^2.34.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "dotenv-webpack": "^1.8.0",
