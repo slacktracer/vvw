@@ -13,13 +13,15 @@
         >
           <b-input-group size="sm">
             <b-form-select
-              v-model="sortBy"
               id="sortBySelect"
+              v-model="sortBy"
               :options="sortOptions"
               class="w-75"
             >
               <template v-slot:first>
-                <option value="">-- none --</option>
+                <option value="">
+                  -- none --
+                </option>
               </template>
             </b-form-select>
             <b-form-select
@@ -28,8 +30,12 @@
               :disabled="!sortBy"
               class="w-25"
             >
-              <option :value="false">Asc</option>
-              <option :value="true">Desc</option>
+              <option :value="false">
+                Asc
+              </option>
+              <option :value="true">
+                Desc
+              </option>
             </b-form-select>
           </b-input-group>
         </b-form-group>
@@ -45,11 +51,11 @@
           class="mb-0"
         >
           <b-form-select
-            v-model="sortDirection"
             id="initialSortSelect"
+            v-model="sortDirection"
             size="sm"
             :options="['asc', 'desc', 'last']"
-          ></b-form-select>
+          />
         </b-form-group>
       </b-col>
 
@@ -64,15 +70,15 @@
         >
           <b-input-group size="sm">
             <b-form-input
+              id="filterInput"
               v-model="filter"
               type="search"
-              id="filterInput"
               placeholder="Type to Search"
-            ></b-form-input>
+            />
             <b-input-group-append>
-              <b-button :disabled="!filter" @click="filter = ''"
-                >Clear</b-button
-              >
+              <b-button :disabled="!filter" @click="filter = ''">
+                Clear
+              </b-button>
             </b-input-group-append>
           </b-input-group>
         </b-form-group>
@@ -88,9 +94,15 @@
           class="mb-0"
         >
           <b-form-checkbox-group v-model="filterOn" class="mt-1">
-            <b-form-checkbox value="name">Name</b-form-checkbox>
-            <b-form-checkbox value="age">Age</b-form-checkbox>
-            <b-form-checkbox value="isActive">Active</b-form-checkbox>
+            <b-form-checkbox value="name">
+              Name
+            </b-form-checkbox>
+            <b-form-checkbox value="age">
+              Age
+            </b-form-checkbox>
+            <b-form-checkbox value="isActive">
+              Active
+            </b-form-checkbox>
           </b-form-checkbox-group>
         </b-form-group>
       </b-col>
@@ -107,11 +119,11 @@
           class="mb-0"
         >
           <b-form-select
-            v-model="perPage"
             id="perPageSelect"
+            v-model="perPage"
             size="sm"
             :options="pageOptions"
-          ></b-form-select>
+          />
         </b-form-group>
       </b-col>
 
@@ -123,7 +135,7 @@
           align="fill"
           size="sm"
           class="my-0"
-        ></b-pagination>
+        />
       </b-col>
     </b-row>
 
@@ -137,7 +149,7 @@
       :current-page="currentPage"
       :per-page="perPage"
       :filter="filter"
-      :filterIncludedFields="filterOn"
+      :filter-included-fields="filterOn"
       :sort-by.sync="sortBy"
       :sort-desc.sync="sortDesc"
       :sort-direction="sortDirection"
@@ -150,8 +162,8 @@
       <template v-slot:cell(actions)="row">
         <b-button
           size="sm"
-          @click="info(row.item, row.index, $event.target)"
           class="mr-1"
+          @click="info(row.item, row.index, $event.target)"
         >
           Info modal
         </b-button>
@@ -184,7 +196,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   data() {
     return {
       items: [
@@ -235,7 +249,9 @@ export default {
         {
           key: "isActive",
           label: "is Active",
-          formatter: (value, key, item) => {
+          formatter: (value, key, item): string => {
+            key;
+            item;
             return value ? "Yes" : "No";
           },
           sortable: true,
@@ -261,7 +277,7 @@ export default {
     };
   },
   computed: {
-    sortOptions() {
+    sortOptions(): Record<string, number | string>[] {
       // Create an options list from our fields
       return this.fields
         .filter((f) => f.sortable)
@@ -275,20 +291,20 @@ export default {
     this.totalRows = this.items.length;
   },
   methods: {
-    info(item, index, button) {
+    info(item, index, button): void {
       this.infoModal.title = `Row index: ${index}`;
       this.infoModal.content = JSON.stringify(item, null, 2);
       this.$root.$emit("bv::show::modal", this.infoModal.id, button);
     },
-    resetInfoModal() {
+    resetInfoModal(): void {
       this.infoModal.title = "";
       this.infoModal.content = "";
     },
-    onFiltered(filteredItems) {
+    onFiltered(filteredItems): void {
       // Trigger pagination to update the number of buttons/pages due to filtering
       this.totalRows = filteredItems.length;
       this.currentPage = 1;
     },
   },
-};
+});
 </script>

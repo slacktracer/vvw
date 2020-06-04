@@ -30,17 +30,19 @@
 </template>
 
 <script lang="ts">
+import Vue from "vue";
+
 import x from "src/home/services/something";
 import helloWorld from "src/home/components/hello-world.vue";
 
 console.log(process.env.FF_CTHULHU);
 
-export default {
+export default Vue.extend({
   name: "Home",
   components: {
     helloWorld,
   },
-  data(): Record<string, any> {
+  data(): Record<string, object | string> {
     return {
       crazy: process.env.FF_CTHULHU,
       envvar: process.env.DATA,
@@ -55,7 +57,7 @@ export default {
       return "test" + a + b;
     },
   },
-};
+});
 </script>
 
 <style scoped>
