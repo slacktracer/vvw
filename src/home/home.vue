@@ -3,29 +3,21 @@
     <hello-world msg="Hello, World!" />
     <div>
       <p>
-        {{ greeting }} ({{ val }}) World! {{ envvar }}::{{
-          stuff("string", 10)
-        }}::{{ crazy }}
+        {{ greeting }} ({{ val }}) World! from env: {{ envvar }}::{{
+          stuff("test-", 42)
+        }}::from env: {{ crazy }}
       </p>
     </div>
-    <img
-      alt="Vue logo"
-      class="mb-2"
-      height="400"
-      src="./assets/chuttersnap-UmftXwTd8Q4-unsplash.jpg"
-    />
-    <p>
-      Photo by
-      <a
-        href="https://unsplash.com/@chuttersnap?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-        >chuttersnap</a
+    <a
+      href="https://www.deviantart.com/dio-03/art/MEKANO-Retrofix-d-201919932"
+      target="_blank"
+    >
+      <img
+        alt="Mekano"
+        class="image mb-2"
+        src="./assets/mekano-big-screenRS.jpg"
       >
-      on
-      <a
-        href="/s/photos/wild-rooster?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
-        >Unsplash</a
-      >
-    </p>
+    </a>
   </div>
 </template>
 
@@ -54,7 +46,7 @@ export default Vue.extend({
   },
   methods: {
     stuff(a: string, b: number): string {
-      return "test" + a + b;
+      return "test-" + a + b;
     },
   },
 });
@@ -63,5 +55,9 @@ export default Vue.extend({
 <style scoped>
 .home {
   text-align: center;
+}
+.image {
+  max-width: 100vw;
+  width: 600px;
 }
 </style>

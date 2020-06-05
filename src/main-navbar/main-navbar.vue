@@ -1,12 +1,22 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="dark">
+  <b-navbar
+    toggleable="lg"
+    type="dark"
+    variant="dark"
+  >
     <b-navbar-brand href="#">
-      <img src="../favicon-32x32.png" alt="poo" />
+      <img
+        src="./assets/rsz_mekano-big-screenrs.jpg"
+        alt="Mekano"
+      >
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse" />
 
-    <b-collapse id="nav-collapse" is-nav>
+    <b-collapse
+      id="nav-collapse"
+      is-nav
+    >
       <b-navbar-nav>
         <b-nav-item to="/">
           Home
@@ -17,7 +27,10 @@
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
-        <b-nav-item-dropdown text="Lang" right>
+        <b-nav-item-dropdown
+          text="Lang"
+          right
+        >
           <b-dropdown-item href="#">
             EN
           </b-dropdown-item>
