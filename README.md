@@ -80,7 +80,7 @@ It is supposed to [work out of the box with WebStorm](https://github.com/JetBrai
 
 #### Some ESLint tweaks
 
-The following eslint-plugin-vue rules wre turned off because they conflict with Prettier.
+The following eslint-plugin-vue rules were turned off because they conflict with Prettier.
 
 - [vue/max-attributes-per-line](https://eslint.vuejs.org/rules/html-self-closing.html)
 - [vue/html-self-closing](https://eslint.vuejs.org/rules/max-attributes-per-line.html)
