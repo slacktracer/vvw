@@ -6,12 +6,15 @@
 </template>
 
 <script>
-import Vue from "vue";
+import { defineComponent } from "@vue/composition-api";
 
+import { version } from "../../package.json";
 import mainNavbar from "src/main-navbar/main-navbar.vue";
 
-export default Vue.extend({
-  name: "App",
+export default defineComponent({
   components: { mainNavbar },
+  setup() {
+    return { version };
+  },
 });
 </script>

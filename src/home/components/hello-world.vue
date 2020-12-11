@@ -5,10 +5,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "@vue/composition-api";
 
-export default Vue.extend({
-  name: "HelloWorld",
+export default defineComponent({
   props: {
     msg: { default: "", type: String },
   },

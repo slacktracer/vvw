@@ -54,14 +54,13 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "@vue/composition-api";
+
 import { version } from "../../package.json";
 
-export default {
-  name: "MainNavbar",
-  data(): Record<string, object | string> {
-    return {
-      version,
-    };
+export default defineComponent({
+  setup() {
+    return { version };
   },
-};
+});
 </script>
