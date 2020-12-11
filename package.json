@@ -10,6 +10,8 @@
     "format-check": "prettier . --check",
     "lint": "eslint . --ext .js,.ts,.vue",
     "lint:fix": "eslint . --ext .js,.ts,.vue --fix",
+    "major": "npm version major -m 'Build v%s' && git push --follow-tags",
+    "minor": "npm version minor -m 'Build v%s' && git push --follow-tags",
     "patch": "npm version patch -m 'Build v%s' && git push --follow-tags",
     "prepatch": "npm run type-check_format-check_lint",
     "serve": "PORT=$npm_package_config_development_server_port webpack-dev-server $npm_package_config_development",
